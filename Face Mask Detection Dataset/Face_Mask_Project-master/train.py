@@ -28,7 +28,7 @@ BS = 32
 # For Linux
 # DIRECTORY = r"/home/apple/Desktop/Face_Mask_Project/dataset/"
 
-DIRECTORY = r"C:\Desktop/Face_Mask_Project/dataset/"
+DIRECTORY = r"C:/Users/nguye/Downloads/bk/kncn_2022/Face Mask Detection Dataset/dataset"
 CATEGORIES = ["with_mask", "without_mask"]
 
 # grab the list of images in our dataset directory, then initialize
@@ -40,13 +40,13 @@ labels = []
 for category in CATEGORIES:
     path = os.path.join(DIRECTORY, category)
     for img in os.listdir(path):
-    	img_path = os.path.join(path, img)
-    	image = load_img(img_path, target_size=(224, 224))
-    	image = img_to_array(image)
-    	image = preprocess_input(image)
+        img_path = os.path.join(path, img)
+        image = load_img(img_path, target_size=(224, 224))
+        image = img_to_array(image)
+        image = preprocess_input(image)
 
-    	data.append(image)
-    	labels.append(category)
+        data.append(image)
+        labels.append(category)
 
 # convert text to Binary
 lb = LabelBinarizer()
